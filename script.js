@@ -16,12 +16,14 @@ const Gameboard = (() => {
   const userMark = (symbol) => {
     buttons.forEach((button, i) => {
       button.addEventListener("click", () => {
+        
         if (button.textContent != symbol) {
           Gameboard.board[i] = symbol;
           Gameboard.displayBoard();
         } else {
           alert("ILEGAL MOVE");
         }
+        
       });
     });
   };
@@ -58,15 +60,22 @@ const Controller = (() => {
       [2, 4, 6],
     ];
     // SI BOARD TIENE ALGUNA DE LAS COMBINACIONES(INDEX) CON EL MISMO SIMBOLO ENTONCES VICTORIA
-    // encontrar forma de asociar los index al board y a simbolo.
-    // desestructurar array?
-    
+    // encontrar forma de asociar los index de los array al board y a simbolo.
+    // foreach array dentro de winningcombination... 
+    // desestructurar cada array?
+    winningCombinations.forEach(combination => {
+      const [firstMark,secondMark,thirdMark] = combination
 
-   
+     if(Gameboard.board[combination] === 'X') {
+      console.log('HOLA')
+     }
+    })
+
   };
   return {
     checkWin,
   };
 })();
 
-Controller.checkWin();
+
+Controller.checkWin(symbol);
