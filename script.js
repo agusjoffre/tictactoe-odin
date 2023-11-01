@@ -16,14 +16,14 @@ const Gameboard = (() => {
   const userMark = (symbol) => {
     buttons.forEach((button, i) => {
       button.addEventListener("click", () => {
-        
         if (button.textContent != symbol) {
           Gameboard.board[i] = symbol;
           Gameboard.displayBoard();
+          GameController.checkWin(symbol);
+          console.log(Gameboard.board);
         } else {
           alert("ILEGAL MOVE");
         }
-        
       });
     });
   };
@@ -46,9 +46,10 @@ const playerFactory = (name, symbol) => {};
 
 /* Controller module */
 // turns & checking result.
-const Controller = (() => {
+const GameController = (() => {
   //Build the logic that checks for when the game is over! Should check for 3-in-a-row and a tie.
   const checkWin = (symbol) => {
+    const board = Gameboard.board
     const winningCombinations = [
       [0, 1, 2],
       [3, 4, 5],
@@ -59,17 +60,20 @@ const Controller = (() => {
       [0, 4, 8],
       [2, 4, 6],
     ];
-    // SI BOARD TIENE ALGUNA DE LAS COMBINACIONES(INDEX) CON EL MISMO SIMBOLO ENTONCES VICTORIA
-    // encontrar forma de asociar los index de los array al board y a simbolo.
-    // foreach array dentro de winningcombination... 
-    // desestructurar cada array?
-    
 
+    winningCombinations.forEach((combination) => {
+      const [firstMark, secondMark, thirdMark] = combination;
+
+      if (
+        board[firstMark] !== undefined &&
+        board[firstMark] === board[secondMark] &&
+        board[secondMark] === board[thirdMark]
+      ) {
+        alert("YOU WIN");
+      }
+    });
   };
   return {
     checkWin,
   };
 })();
-
-
-Controller.checkWin('x');
