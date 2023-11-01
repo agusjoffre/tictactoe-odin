@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 30px;
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: 900;
+}
+
+.info {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+form {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px black;
+  padding: 30px;
+}
+
+input {
+  padding: 15px;
+  font-size: 22px;
+  width: 300px;
+  height: 40px;
+  margin-bottom: 20px;
+  border: solid 0.3px rgb(255, 93, 29);
+}
+
+label {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+#submit-btn {
+  width: 300px;
+  height: 50px;
+  background-color: rgb(255, 93, 29);
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+#submit-btn:hover {
+  background-color: rgb(150, 57, 20);
+  transition: all 1s;
+}
+
+.game-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+.col {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-controller {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#restart-btn {
+  width: 150px;
+  height: 50px;
+  background-color: rgb(255, 93, 29);
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  
+}
+#restart-btn:hover {
+    background-color: rgb(150, 57, 20);
+    transition: all 1s;
+}
+
+.btn-grid {
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    border: solid 1px black;
+    margin: 2px;
+    background-color: white;
+    font-size: 50px;
+}
+
+.btn-grid:hover {
+    background-color: rgb(240, 240, 240);
+}
