@@ -63,13 +63,7 @@ const Controller = (() => {
     // encontrar forma de asociar los index de los array al board y a simbolo.
     // foreach array dentro de winningcombination... 
     // desestructurar cada array?
-    winningCombinations.forEach(combination => {
-      const [firstMark,secondMark,thirdMark] = combination
-
-     if(Gameboard.board[combination] === 'X') {
-      console.log('HOLA')
-     }
-    })
+    
 
   };
   return {
@@ -78,4 +72,4 @@ const Controller = (() => {
 })();
 
 
-Controller.checkWin(symbol);
+Controller.checkWin('x');
