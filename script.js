@@ -38,7 +38,7 @@ const Gameboard = (() => {
 //Call to mark the board. Defining the Symbol.
 //Despues ponerlo para que se inicialice en cada turno dependiendo el Player y su Simbolo.
 
-Gameboard.userMark("O"); // CADA VEZ QUE CLICKEES VA A SER CON EL SIMBOLO 'X'.
+Gameboard.userMark("X"); // CADA VEZ QUE CLICKEES VA A SER CON EL SIMBOLO 'X'.
 
 /* Player factory */
 // player creation.
@@ -63,24 +63,20 @@ const GameController = (() => {
       [2, 4, 6],
     ];
 
-    // For each combination inside the array it separates every index(or mark) of the combination
     winningCombinations.forEach((combination) => {
-      //console.log(board)
       console.log(board.includes(undefined) === false, board.length === 9);
       const [firstMark, secondMark, thirdMark] = combination;
-      // if the board has in its indexes defined by combination three equal symbols then finish the game, theres a winner.
-      // if the entire board is full then finish the game, its a tie
-      // if not then do nothing, go on.
       if (
         board[firstMark] !== undefined &&
         board[firstMark] === board[secondMark] &&
         board[secondMark] === board[thirdMark]
       ) {
         // Hay un ganador
-        console.log("There is a Winner");
+
+        alert("There is a Winner");
       } else if (board.includes(undefined) === false && board.length === 9) {
         // Hay un empate
-        console.log("There is a Tie");
+        alert("There is a Tie");
       }
     });
   };
